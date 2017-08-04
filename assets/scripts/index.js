@@ -37,28 +37,43 @@ require('./example');
 //
 //  2 users each user has a 10 second decision to mark a spot or else will get a forfeit loss
 
-var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
+let timeleft = 10;
+let downloadTimer = setInterval(function(){
+timeleft--;
+document.getElementById("countdowntimer").textContent = timeleft;
+if(timeleft <= 0)
+    clearInterval(downloadTimer);
+},1000);
 
 
-
-
-function beginGame() {
-  top = "X";
-
-   setMessage(top + "Game on");
- }
- function setMessage(msg) {
-   document.getElementById("message").innerText = msg;
- }
- function nextMove(box) {
-   box.innerText = top;
-}
+//const timeleft = 10;
+//
+// function setup() {
+//   noCanvas();
+//
+// const timer = select("#timer");
+// index.html(timeleft - counter);
+// }
+// function timeIt() {
+//   counter++;
+//   index.html(timeleft - counter);
+// }
+// setInterval(timeIt, 1000);
+//
+//
+//
+//
+// function beginGame() {
+//   top = "X";
+//
+//    setMessage(top + "Game on");
+//  }
+//  function setMessage(msg) {
+//    document.getElementById("message").innerText = msg;
+//  }
+//  function nextMove(box) {
+//    box.innerText = top;
+// }
 
 $(document).ready(function(){
   $("#testbutton").click(function(){
@@ -75,7 +90,6 @@ $(document).ready(function(){
 //
 
 
-
 //
 // for(var i = 0; i=X; i++)
 //
@@ -85,17 +99,18 @@ $(document).ready(function(){
 //
 // //$("#box1").text("O")
 // //});
-const letter = 'X';
-const letter1 = 'O';
+
+
+let firstTurn = 'X';
+let secondTurn = 'O';
 
 $(".Box").click(function(){
 $(this).css("background-color", "black");
-$(".Box").text(letter)
-
-
-
+$(this).text (firstTurn);
 
 });
+
+
 
 //  $("#box2").click(function(){
 //  $("#box2").text("O")

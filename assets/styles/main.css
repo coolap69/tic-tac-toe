@@ -8,15 +8,32 @@ div{
 
 }
 .header {
+  font-size: 120px;
   color: red
 }
 .rules {
   color:white;
 }
+.button {
+  text-align: center;
+
+}
+
+.youhave {
+  text-align: center;
+  font-size: 100px;
+  color: orange;
+
+}
 #countdowntimer {
     text-align: center;
-    color: white;
-    font-size: 100px;
+    color: orange;
+    font-size: 30px;
+}
+#message {
+  text-align: center;
+  color: orange;
+  font-size: 60px;
 }
 
 
@@ -26,10 +43,10 @@ table {
   width: 50%;
   border-width: 1px;
   border-style:solid;
-  font-size: 40px;
+  font-size: 10px;
   text-align: center;
-  font-weight: 500;
-  font-size: 80px;
+  font-weight: 50;
+  font-size: 100px;
   color: #86ff12;
 }
 
@@ -88,8 +105,13 @@ h2 {
    font-size: 30px;
    color: #86ff12
 
-
  }
+
+h3 {
+  text-align: center;
+  font-size: 80px;
+  color: white;
+}
 
 
 
@@ -99,12 +121,6 @@ ul {
 
 p {
 
-  text-align: center;
-  font-size: 100px;
-  color: white;
-}
-
-.button {
   text-align: center;
 
 }
