@@ -1,18 +1,18 @@
 ## Tick Tick Tac Toe ##
 
 ## Wireframe ##
-Here what my vision look like when the whole game is completed.
-Design was base on the name. Tick Tick Tick Tac Toe. 
-I added a nuclear image in the background that I been saving for yeara.
-There is a 10 second countdown clock that automatically starts once a player makes a move and will loose if they run out of time.
-To make it more challenging fot the eyes I added a spin move of 360degree.
-There is Sign up, Log in, Log out, change of password and players will be able to see the table sping but not able to record anypoints or wins until is sign in.
-Suppose to be a small Bio and picture of the two players in the right side
-Rules of the game in the left side. 
-Also in the left side there is a board that will show the 10 best of the best players that accumulated most points or wins. 
-Each player starts with 100 point and they can make a bet with other players. this provide us more fun stats than just a win.
-
-
+<ol>
+ <li>Here what my vision look like when the whole game is completed. </li>
+ <li>Design was base on the name. Tick Tick Tick Tac Toe. </li>
+ <li>I added a nuclear image in the background that I been saving for years.</li>
+ <li>There is a 10 second countdown clock that automatically starts once a player makes a move and will loose if they run out of time.</li>
+ <li>To make it more challenging fot the eyes I added a spin move of 360degree.</li>
+ <li>There is Sign up, Log in, Log out, change of password and players will be able to see the table sping but not able to record anypoints or wins until is sign in.</li>
+ <li>Suppose to be a small Bio and picture of the two players in the right side
+ <li>Rules of the game in the left side. </li>
+ <li>Also in the left side there is a board that will show the 10 best of the best players that accumulated most points or wins. </li>
+ <li>Each player starts with 100 point and they can make a bet with other players. this provide us more fun stats than just a win. </li>
+</ol>
 
 ![img_5450](https://user-images.githubusercontent.com/29930126/29295517-d0602c16-8122-11e7-8128-473d5ead4bc8.jpeg)
 
