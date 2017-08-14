@@ -13,7 +13,7 @@ The object returned can be used to validate the form data.
 'use strict';
 
 const ajaxDefaults = {
-  url: 'https://aqueous-atoll-85096.herokuapp.com',
+  url: 'https://aqueous-atoll-85096.herokuapp.com/',
 };
 
 const myRequest = (data, success, fail) => {
