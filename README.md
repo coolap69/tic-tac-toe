@@ -4,6 +4,9 @@ The game consist in 2 players to start the game. Each player has a turn.
 First player will start with the letter X and the second player will inherit the letter O
 There are nine spots in a board. 3 vertically spots and 3 horizontal spots.
 The player that successfully position their letter in three spots in a row including diagonal wins the game. </P>
+
+Link: https://github.com/coolap69/tic-tac-toe.git
+
 ## Tools that was use ##
 <ol>
   <li>Jquery</li>
@@ -39,5 +42,5 @@ Here is what my vision look like when the whole game is completed.
  <ul>
 
 
-## [License](LICENSE)
+## License ##
 Louis Pazos
