@@ -1,6 +1,11 @@
 ## Tick Tick Tac Toe ##
 
-Projects components:
+## Wireframe ##
+Here is my vision when the whole game is completed.
+
+
+
+![img_5450](https://user-images.githubusercontent.com/29930126/29295517-d0602c16-8122-11e7-8128-473d5ead4bc8.jpeg)
 
 
 
