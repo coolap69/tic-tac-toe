@@ -1,8 +1,8 @@
 ## Tick Tick Tac Toe ##
 
 ## Wireframe ##
+Here what my vision look like when the whole game is completed.
 <ol>
- <li>Here what my vision look like when the whole game is completed. </li>
  <li>Design was base on the name. Tick Tick Tick Tac Toe. </li>
  <li>I added a nuclear image in the background that I been saving for years.</li>
  <li>There is a 10 second countdown clock that automatically starts once a player makes a move and will loose if they run out of time.</li>
