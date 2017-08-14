@@ -1,17 +1,24 @@
 'use strict';
 
-const setAPIOrigin = require('../../lib/set-api-origin');
-const config = require('./config');
+
+const authEvents = require('./auth/events.js');
 
 $(() => {
-  setAPIOrigin(location, config);
+  authEvents.addHandlers();
 });
 
- //use require with a reference to bundle the file and use it in this file
+// use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
 require('./example');
+//use require with a reference to bundle the file and use it in this file
+// const example = require('./example')
+
+// use require without a reference to ensure a file is bundled
+// require('./example');
+
+
 
 //  Pseudocode for game board
 //
@@ -38,101 +45,73 @@ require('./example');
 //  2 users each user has a 10 second decision to mark a spot or else will get a forfeit loss
 
 let timeleft = 10;
-let downloadTimer = setInterval(function(){
-timeleft--;
-document.getElementById("countdowntimer").textContent = timeleft;
-if(timeleft <= 0)
+let downloadTimer = setInterval(function() {
+  timeleft--;
+  document.getElementById("countdowntimer").textContent = timeleft;
+  if (timeleft <= 0)
     clearInterval(downloadTimer);
-},1000);
+}, 1000);
 
 
-//const timeleft = 10;
-//
-// function setup() {
-//   noCanvas();
-//
-// const timer = select("#timer");
-// index.html(timeleft - counter);
-// }
-// function timeIt() {
-//   counter++;
-//   index.html(timeleft - counter);
-// }
-// setInterval(timeIt, 1000);
-//
-//
-//
-//
-// function beginGame() {
-//   top = "X";
-//
-//    setMessage(top + "Game on");
-//  }
-//  function setMessage(msg) {
-//    document.getElementById("message").innerText = msg;
-//  }
-//  function nextMove(box) {
-//    box.innerText = top;
-// }
 
-$(document).ready(function(){
-  $("#testbutton").click(function(){
-    $("div,strong,#testbutton").css("background-color","purple");
+
+
+
+// choose starting player as X
+let player = 'X';
+
+
+// do this when a Box is clicked
+$(".Box").click(function() {
+  // detect if Box already has an X or O in it, if so, end this function
+  if ($(this).text() == 'X' || $(this).text() == 'O') {
+    alert("choose another box")
+    return
+  }
+
+  // chane the Box with the approriate player symbol, and the background color to black
+  $(this).css("background-color", "black");
+  $(this).text(player);
+
+  // here are the winning cell combinations
+  const winnerNumbers = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0,4,8],[2,4,8],[8,4,0], [8,4,2]];
+  // const draw = {0,1,2,3,4,5,6,7,8,9}
+
+  // here is where you collect the cells with moves for the current player
+  let locations = [];
+
+  // go through each Box and check if it has an X if player is X, or O if player is O, and put location in locations array
+  $(".Box").each(function(index, element) {
+    let eletext = $(element).text()
+    // if player is X and Box contains X
+    if (player == "X" && eletext == "X") {
+      locations.push(index)
+    // if player is O and Box contains O
+    } else if (player == "O" && eletext == "O") {
+      locations.push(index)
+
+
+    }
   })
-})
 
-
-$(document).ready(function(){
-  $("#testbutton").click(function(){
-    $("tr,strong,#box").css("background-color","purple");
+  // check if your players move locations is in winnerNumbers, and if it is say "you won" in the console
+  let locationString = locations.toString();
+  winnerNumbers.map(function(win) {
+    if (locationString == win.toString()) {
+      alert('you won')
+      return
+    }
   })
-  })
-//
+
+  // for a draw, count number of boxes with a move in them. if it equals 9, it's a draw
 
 
-//
-// for(var i = 0; i=X; i++)
-//
-//
-// } else ("box1").text("X")
-// }
-//
-// //$("#box1").text("O")
-// //});
 
-
-let firstTurn = 'X';
-let secondTurn = 'O';
-
-$(".Box").click(function(){
-$(this).css("background-color", "black");
-$(this).text (firstTurn);
+  // switch the player so the next player can play
+  if (player == 'X') {
+    player = 'O'
+  } else {
+    player = 'X'
+  }
 
 });
-
-
-
-//  $("#box2").click(function(){
-//  $("#box2").text("O")
-//  })
-//  $("#box3").click(function(){
-//  $("#box3").text("O")
-//  })
-//  $("#box4").click(function(){
-//  $("#box4").text("O")
-//  })
-//  $("#box5").click(function(){
-//  $("#box5").text("O")
-//  })
-//  $("#box6").click(function(){
-//  $("#box6").text("O")
-//  })
-//  $("#box7").click(function(){
-//  $("#box7").text("O")
-//  })
-//  $("#box8").click(function(){
-//  $("#box8").text("O")
-//  })
-//  $("#box9").click(function(){
-//  $("#box9").text("O")
-// })

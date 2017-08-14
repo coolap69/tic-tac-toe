@@ -12,10 +12,41 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
+
     </head>
 
 <body>
-  <input id="testbutton" type="button" value="test"/>
+  <form id="sign-up">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+        <form id="sign-in">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="submit" name="submit" value="Sign in!">
+          </fieldset>
+        </form>
+        <form id="sign-out">
+          <fieldset>
+            <legend>Sign out!</legend>
+            <input type="submit" name="submit" value="Sign out!">
+          </fieldset>
+        </form>
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+            <input type="password" name="passwords[new]" value="" placeholder="New Password">
+            <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
 
       <div class="header">
 
@@ -28,7 +59,7 @@
     <div id= "message">Ready to explode?</div>
 
 <table class="container-fluid border">
-
+<br> </br>
 <tr>
   <td class = "Box" id = "box1">  </td>
   <td class = "Box" id = "box2">  </td>
@@ -51,14 +82,13 @@
 
 
         <div class="button">
-            <button>New Game</button>
-            <button>End Game</button>
+<input type="button" value="New Game" onClick="window.location.reload()">
         </div>
 
 
   <div class="rules">
 <h2> Rules </h2>
-      <ul>
+      <ol>
         <li> First each player picks a weapon. (X or O)</li>
         <li> One of the players randomly gets to go first and applies a weapon inside of a box. </li>
         <li> After the first move the other player will have a chance</li>

@@ -1,18 +1,50 @@
+input {
+  background-color: transparent;
+  font-size: 30px
+
+
+}
+form {
+
+  text-align: left;
+  font-size: 100px;
+  color: #86ff12;
+}
+
+element.style {
+  font-size: 50px;
+  color: #86ff12;
+}
+legend {
+ font-size: 50px;
+ color: #86ff12;
+
+}
+
+fieldset {
+  font-size: 15px;
+  align-items: baseline;
+  color: #86ff12;
+}
+
 body {
 background-image: url("http://i.imgur.com/NbBWYcf.jpg");
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: center;
 }
-div{
 
+.button {
+
+text-align: center;
+color: #86ff12;
 }
 .header {
   font-size: 120px;
-  color: red
+  color: #F47209;
 }
 .rules {
-  color:white;
+  color:#86ff12;
 }
 .button {
   text-align: center;
@@ -22,79 +54,57 @@ div{
 .youhave {
   text-align: center;
   font-size: 100px;
-  color: orange;
+  color: #86ff12;
 
 }
 #countdowntimer {
     text-align: center;
-    color: orange;
+    color: #86ff12;
     font-size: 30px;
 }
 #message {
   text-align: center;
-  color: orange;
+  color: #86ff12;
   font-size: 60px;
 }
 
 
-
 table {
 
-  width: 50%;
-  border-width: 1px;
-  border-style:solid;
-  font-size: 10px;
+  font-size: 30px;
   text-align: center;
-  font-weight: 50;
+  font-family: fantasy;
+  font-weight: 700;
   font-size: 100px;
-  color: #86ff12;
+  color: #F47209;
+  transition: transform 10s;
+
 }
 
 td:hover {
   background-color:#FFF68F;
+  transform: rotate(500deg);
 
 }
 
-
-tbody {
-
-border-style: solid;
-border-width: medium;
-
-
-}
 td {
-  width: 33.333%;
-  border-style: solid;
-  border-width: medium;
-}
-td:after {
-  content: '';
-  display: block;
-  margin-top: 100%;
+border: 4px solid #86ff12;
+height: 150px;
+width: 150px;
+transition: transform 10s;
 
 }
 
-
-/*table {
-
-  border-width: medium;
-  width: 40vw;
-  height: 40vw;
-  border-color: #86ff12;
-  text-align: center;
-  color: #86ff12;
-  font-weight: 500;
-  font-size: 80px;
-
-}*/
+table:hover {
+  transform: rotate(500deg);
+}
 
 
 h1 {
 
   background-color: #86ff12;
   text-align: center;
-  color: red;
+  color:#F47209;
   font-size: 30px;
 
 }
@@ -115,12 +125,13 @@ h3 {
 
 
 
-ul {
+ol {
   text-align: center;
 }
 
 p {
 
   text-align: center;
+  color: #86ff12
 
 }
