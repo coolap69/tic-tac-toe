@@ -1,7 +1,7 @@
 ## Tick Tick Tac Toe ##
 
 ## Wireframe ##
-Here what my vision look like when the whole game is completed.
+Here is what my vision look like when the whole game is completed.
 <ol>
  <li>Design was base on the name. Tick Tick Tick Tac Toe. </li>
  <li>I added a nuclear image in the background that I been saving for years.</li>
