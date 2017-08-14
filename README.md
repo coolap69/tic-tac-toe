@@ -4,8 +4,16 @@ The game consist in 2 players to start the game. Each player has a turn.
 First player will start with the letter X and the second player will inherit the letter O
 There are nine spots in a board. 3 vertically spots and 3 horizontal spots.
 The player that successfully position their letter in three spots in a row including diagonal wins the game. </P>
-## Apps that was use ##
-
+## Tools that was use ##
+<ol>
+  <li>Jquery</li>
+  <li>html</li>
+  <li>SCSS</li>
+  <li>Javascript</li>
+  <li>Jquery</li>
+  <li>Jason</li>
+  <li>Ajax</li>
+  </ol>
 
 ## Wireframe ##
 Here is what my vision look like when the whole game is completed.
@@ -22,6 +30,13 @@ Here is what my vision look like when the whole game is completed.
 </ol>
 
 ![img_5450](https://user-images.githubusercontent.com/29930126/29295517-d0602c16-8122-11e7-8128-473d5ead4bc8.jpeg)
+
+## Future ##
+<ul>
+  <li>Countdown clock needs to be added when each turn is applied</li>
+  <li>Statistic tables needs to be applied</li>
+  <li> A few more tables to match the wireframe
+ <ul>
 
 
 ## [License](LICENSE)
