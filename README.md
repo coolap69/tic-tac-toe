@@ -1,7 +1,7 @@
 ## Tick Tick Tac Toe ##
 
 Projects components:
-
+gi
 
 
 ## Installation
