@@ -1,73 +1,52 @@
-'use strict';
+'use strict'
 
-const app = require('../app.js');
+const app = require('../app.js')
+const hide = require('./hide.js')
 
-const signInSuccess = (data) => {
+const onSignUpSuccess = (data) => {
+  hide.signUp()
+  console.log('You successfully created an account')
   app.user = data.user
-  console.log(app);
-  console.log('sign in');
-  $('#signIn').html('Sign in successful.');
-  $('#signIn').hide(2500);
-  $('#gameBoard').removeClass('hide');
 }
 
-const signOutSuccess = () => {
+const onError = function (response) {
+  console.error(response)
+}
+
+const onSignInSuccess = function (data) {
+  hide.signIn()
+  console.log('You successfully sign in')
+  app.user = data.user
+}
+
+const onSignInError = function (response) {
+  console.error(response)
+}
+
+const onChangePasswordSuccess = function () {
+  console.log('You succesfully change your password')
+}
+
+const onChangePasswordError = function (response) {
+  console.log(response)
+}
+
+const onSignOutSuccess = function () {
+  console.log('You successfully sign out')
   app.user = null
-  console.log(app);
-  console.log('sign out');
-  $('#signOut').html('You signed out.');
-  $('#signOut').hide(2500);
-  $('#gameBoard').addClass('hide');
 }
 
-const changePasswordSuccess = (data) => {
-  console.log('Password Successfully Changed.');
-  $('#changePassword').html('Password Successfully Changed');
-  $('#changePassword').hide(2500);
-}
-
-const success = (data) => {
-  console.log(data);
-  console.log('success!');
-};
-
-const failure = (error) => {
-  console.error(error);
-  console.log('failure!');
-}
-
-const createGameSuccess = (data) => {
-  app.game = data.game
-  app.game.id = data.game.id
-  console.log(data);
-  console.log('Success');
-}
-
-const createGameFailure = (error) => {
-  console.log(error);
-  console.log('Fail');
-}
-
-const getHistorySuccess = (data) => {
-  $('oldGame').html('You have played before user' + app.user.id);
-  console.log(data.id);
-  console.log('watch me!');
-  console.log('alright');
-}
-
-const getHistoryFailure = (error) => {
-  console.log(error);
-  console.log('Fail');
+const onSignOutError = function (response) {
+  console.log(response)
 }
 
 module.exports = {
-  failure,
-  success,
-  signInSuccess,
-  signOutSuccess,
-  changePasswordSuccess,
-  createGameSuccess,
-  createGameFailure,
-  getHistorySuccess,
-  getHistoryFailure
-};
+  onSignUpSuccess,
+  onError,
+  onSignInSuccess,
+  onSignInError,
+  onChangePasswordSuccess,
+  onChangePasswordError,
+  onSignOutSuccess,
+  onSignOutError
+}

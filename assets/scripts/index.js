@@ -2,24 +2,20 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin.js')
 const config = require('./config.js')
-const events = require('./auth/event.js')
+const event = require('./auth/event.js')
 $(() => {
   setAPIOrigin(location, config)
-   // do I add config.apiOrigins.production here?
-});
+})
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-require('./example');
-//use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example');
-
-
+$(() => {
+  $('#sign-up').on('submit', event.onSignUp)
+  $('#sign-in').on('submit', event.onSignIn)
+  $('#change-password').on('submit', event.onChangePassword)
+  $('#sign-Out').on('submit', event.onSignOut)
+  // $('#postButton').on('click', event.onCreatePost)
+  // $('#postButton').on('click', event.onGetService)
+  // $('#deleteButton').on('submit', accountEvents.onDeletePost)//
+})
 
 //  Pseudocode for game board
 //
@@ -45,74 +41,62 @@ require('./example');
 //
 //  2 users each user has a 10 second decision to mark a spot or else will get a forfeit loss
 
-let timeleft = 10;
-let downloadTimer = setInterval(function() {
-  timeleft--;
-  document.getElementById("countdowntimer").textContent = timeleft;
-  if (timeleft <= 0)
-    clearInterval(downloadTimer);
-}, 1000);
-
-
-
-
-
+let timeleft = 10
+const downloadTimer = setInterval(function () {
+  timeleft--
+  document.getElementById('countdowntimer').textContent = timeleft
+  if (timeleft <= 0) {}
+  clearInterval(downloadTimer)
+}, 1000)
 
 // choose starting player as X
-let player = 'X';
-
+let player = 'X'
 
 // do this when a Box is clicked
-$(".Box").click(function() {
+$('.Box').click(function () {
   // detect if Box already has an X or O in it, if so, end this function
-  if ($(this).text() == 'X' || $(this).text() == 'O') {
-    alert("choose another box")
+  if ($(this).text() === 'X' || $(this).text() === 'O') {
+    alert('choose another box')
     return
   }
 
   // chane the Box with the approriate player symbol, and the background color to black
-  $(this).css("background-color", "black");
-  $(this).text(player);
+  $(this).css('background-color', 'black')
+  $(this).text(player)
 
   // here are the winning cell combinations
-  const winnerNumbers = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0,4,8],[2,4,8],[8,4,0], [8,4,2]];
+  const winnerNumbers = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 8], [8, 4, 0], [8, 4, 2]]
   // const draw = {0,1,2,3,4,5,6,7,8,9}
 
   // here is where you collect the cells with moves for the current player
-  let locations = [];
+  const locations = []
 
   // go through each Box and check if it has an X if player is X, or O if player is O, and put location in locations array
-  $(".Box").each(function(index, element) {
-    let eletext = $(element).text()
+  $('.Box').each(function (index, element) {
+    const eletext = $(element).text()
     // if player is X and Box contains X
-    if (player == "X" && eletext == "X") {
+    if (player === 'X' && eletext === 'X') {
       locations.push(index)
     // if player is O and Box contains O
-    } else if (player == "O" && eletext == "O") {
+    } else if (player === 'O' && eletext === 'O') {
       locations.push(index)
-
-
     }
   })
 
   // check if your players move locations is in winnerNumbers, and if it is say "you won" in the console
-  let locationString = locations.toString();
-  winnerNumbers.map(function(win) {
-    if (locationString == win.toString()) {
+  const locationString = locations.toString()
+  winnerNumbers.map(function (win) {
+    if (locationString === win.toString()) {
       alert('you won')
-      return
     }
   })
 
   // for a draw, count number of boxes with a move in them. if it equals 9, it's a draw
 
-
-
   // switch the player so the next player can play
-  if (player == 'X') {
+  if (player === 'X') {
     player = 'O'
   } else {
     player = 'X'
   }
-
-});
+})

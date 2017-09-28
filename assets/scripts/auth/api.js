@@ -1,34 +1,39 @@
-'use strict';
+'use strict'
 
-const app = require('../app.js');
+const app = require('../app.js')
 
 // authApi.signUp(authUi.success, authUi.failure, data)
 
-const signUp = function(data) {
-  // console.log(data)
+const signUp = function (data) {
+  console.log(data)
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
     data: {
-      'credentials': {
-        'email': data.credentials.email,
-        'password': data.credentials.password,
-        'password_confirmation': data.credentials.password
+      credentials: {
+        email: data.credentials.email,
+        password: data.credentials.password,
+        password_confirmation: data.credentials.password
       }
     }
   })
-};
+}
 
-const signIn = function(data) {
-  // console.log(data)
+const signIn = function (data) {
+  console.log(data)
   return $.ajax({
     url: app.host + '/sign-in/',
     method: 'POST',
-    data
+    data: {
+      credentials: {
+        email: data.email,
+        password: data.password
+      }
+    }
   })
-};
+}
 
-const signOut = function() {
+const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: app.host + '/sign-out/' + app.user.id,
@@ -36,9 +41,9 @@ const signOut = function() {
       Authorization: 'Token token=' + app.user.token
     }
   })
-};
+}
 
-const changePassword = function(data) {
+const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/change-password/' + app.user.id,
@@ -53,7 +58,6 @@ const changePassword = function(data) {
     }
   })
 }
-
 
 const createGame = (data) => {
   console.log(data)
