@@ -8,10 +8,10 @@ $(() => {
 })
 
 $(() => {
-  $('#sign-up').on('submit', event.onSignUp)
-  $('#sign-in').on('submit', event.onSignIn)
-  $('#change-password').on('submit', event.onChangePassword)
-  $('#sign-Out').on('submit', event.onSignOut)
+  $('#signUp').on('submit', event.onSignUp)
+  $('#signIn').on('submit', event.onSignIn)
+  $('#changePassword').on('submit', event.onChangePassword)
+  $('#signOut').on('submit', event.onSignOut)
   // $('#postButton').on('click', event.onCreatePost)
   // $('#postButton').on('click', event.onGetService)
   // $('#deleteButton').on('submit', accountEvents.onDeletePost)//

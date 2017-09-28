@@ -1,39 +1,40 @@
 'use strict'
 
-const api = require('./api')
-const ui = require('./ui')
+const api = require('./api.js')
+const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('passing through event js')
   api.signUp(data)
-    .done(ui.success)
-    .fail(ui.fail)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.fail)
 }
 
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
-    .done(ui.signInSuccess)
-    .fail(ui.fail)
+    .then(ui.onSignInSuccess)
+    .catch(ui.fail)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signOut(data)
-    .done(ui.signOutSuccess)
-    .fail(ui.fail)
+    .then(ui.onSignOutSuccess)
+    .catch(ui.fail)
 }
 
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.changePassword(data)
-    .done(ui.changePasswordSuccess)
-    .fail(ui.fail)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.fail)
 }
 
 const onCreateGame = function (event) {
@@ -45,8 +46,8 @@ const onCreateGame = function (event) {
 
 const onUpdateGame = function (index, val, over) {
   api.updateGame(index, val, over)
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
 }
 
 const onGetHistory = function (event) {

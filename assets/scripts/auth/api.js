@@ -5,7 +5,7 @@ const app = require('../app.js')
 // authApi.signUp(authUi.success, authUi.failure, data)
 
 const signUp = function (data) {
-  console.log(data)
+  console.log('passing')
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
@@ -26,17 +26,18 @@ const signIn = function (data) {
     method: 'POST',
     data: {
       credentials: {
-        email: data.email,
-        password: data.password
+        email: data.credentials.email,
+        password: data.credentials.password
       }
     }
   })
 }
 
 const signOut = function () {
+  console.log('passing through the api.js')
   return $.ajax({
-    method: 'DELETE',
     url: app.host + '/sign-out/' + app.user.id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
