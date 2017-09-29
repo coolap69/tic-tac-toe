@@ -15,6 +15,7 @@ const onError = function (response) {
 
 const onSignInSuccess = function (data) {
   hide.signIn()
+  hide.hideGame()
   console.log('You successfully sign in')
   app.user = data.user
 }
@@ -40,6 +41,19 @@ const onSignOutError = function (response) {
   console.log(response)
 }
 
+const onCreateGameSuccess = function (data) {
+  console.log('You created a new game')
+  console.log(data)
+  // app.game = data.game
+  // app.game.id = data.game.id
+  // $('#password-success').hide()
+}
+
+const onCreateGameError = function (response) {
+  console.log(response)
+  console.log('err')
+}
+
 module.exports = {
   onSignUpSuccess,
   onError,
@@ -48,5 +62,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordError,
   onSignOutSuccess,
-  onSignOutError
+  onSignOutError,
+  onCreateGameSuccess,
+  onCreateGameError
 }

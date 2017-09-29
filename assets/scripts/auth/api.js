@@ -62,12 +62,14 @@ const changePassword = function (data) {
 
 const createGame = (data) => {
   console.log(data)
+  console.log('what is data')
   return $.ajax({
     url: app.host + '/games/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    }
+    },
+    data: data
   })
 }
 
@@ -90,22 +92,22 @@ const updateGame = (index, val, over) => {
   })
 }
 
-const getHistory = (data) => {
-  return $.ajax({
-    url: app.host + '/games?over=true',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
-  })
-}
+// const getHistory = (data) => {
+//   return $.ajax({
+//     url: app.host + '/games?over=true',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  createGame,
-  updateGame,
-  getHistory
+  createGame
+  // updateGame,
+  // getHistory
 }

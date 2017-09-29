@@ -12,35 +12,36 @@ $(() => {
   $('#signIn').on('submit', event.onSignIn)
   $('#changePassword').on('submit', event.onChangePassword)
   $('#signOut').on('submit', event.onSignOut)
-  // $('#postButton').on('click', event.onCreatePost)
+  // $('#play').click(event.onCreateGame)
+  // $('#createGame').click(event.onCreateGame)
   // $('#postButton').on('click', event.onGetService)
   // $('#deleteButton').on('submit', accountEvents.onDeletePost)//
+  $('#create-game').on('submit', event.onCreateGame)
+
+  $('.game').children().hide()
 })
 
-//  Pseudocode for game board
+// const createBoard = function () {
+//   $('.container-fluid border').removeClass('hidden')
+//   $('#createGame').removeClass('hidden')
+// }
 //
-// Create board (Mobile friendly)
+// $('#play').click(createBoard)
+// const createGame = function () {
+//   $('#box1').removeClass('X O')
+//   $('#box2').removeClass('X O')
+//   $('#box3').removeClass('X O')
+//   $('#box4').removeClass('X O')
+//   $('#box5').removeClass('X O')
+//   $('#box6').removeClass('X O')
+//   $('#box7').removeClass('X O')
+//   $('#box8').removeClass('X O')
+//   $('#box9').removeClass('X O')
+// }
 //
-//  Built 9 function squares
-//
-//
-// Pick random user to go first and pick a random weapon for first user if is X or O
-// Hover to any of the 9 squares and change color
-// Pick a square out of the 9 (how each square can function?
-// Each square needs to be a able to change to X or to O
-// After 1 user picks an X the next user should be able to add the O
-// After a square has been used noone is allowed to touch it until new game start
-//
-//
-// How to win the game
-//    Three  X wins= horizontal, vertical, diagonal =
-//       Three OOO wins= horizontal, vertical, diagonal
-//
-//    if there is no 3 X or 3 0 = Draw
-//
-//
-//  2 users each user has a 10 second decision to mark a spot or else will get a forfeit loss
+// $('#createGame').click(createGame)
 
+/// timer ///
 let timeleft = 10
 const downloadTimer = setInterval(function () {
   timeleft--
@@ -49,14 +50,13 @@ const downloadTimer = setInterval(function () {
   clearInterval(downloadTimer)
 }, 1000)
 
-// choose starting player as X
 let player = 'X'
 
-// do this when a Box is clicked
 $('.Box').click(function () {
   // detect if Box already has an X or O in it, if so, end this function
   if ($(this).text() === 'X' || $(this).text() === 'O') {
-    alert('choose another box')
+    // alert('choose another box')
+    $('h4').html('<p>Pick Another Box</p>')
     return
   }
 
@@ -65,7 +65,8 @@ $('.Box').click(function () {
   $(this).text(player)
 
   // here are the winning cell combinations
-  const winnerNumbers = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 8], [8, 4, 0], [8, 4, 2]]
+  const winnerNumbers = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 8], [8, 4, 0], [8, 4, 2],
+    [7, 4, 1]]
   // const draw = {0,1,2,3,4,5,6,7,8,9}
 
   // here is where you collect the cells with moves for the current player
@@ -87,7 +88,7 @@ $('.Box').click(function () {
   const locationString = locations.toString()
   winnerNumbers.map(function (win) {
     if (locationString === win.toString()) {
-      alert('you won')
+      $('h4').html('<p>You are the Bomb!</p>')
     }
   })
 

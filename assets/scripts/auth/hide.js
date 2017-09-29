@@ -16,7 +16,16 @@ const signUp = function () {
   })
 }
 
+const hideGame = function () {
+  $(() => {
+    console.log('in the beginning')
+    $('.game').children().show()
+    console.log('Success')
+  })
+}
+
 module.exports = {
   signIn,
-  signUp
+  signUp,
+  hideGame
 }
