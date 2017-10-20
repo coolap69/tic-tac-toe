@@ -1,6 +1,6 @@
 'use strict'
 
-const app = require('../app.js')
+const app = require('../store.js')
 const hide = require('./hide.js')
 
 const onSignUpSuccess = (data) => {
@@ -44,8 +44,8 @@ const onSignOutError = function (response) {
 const onCreateGameSuccess = function (data) {
   console.log('You created a new game')
   console.log(data)
-  // app.game = data.game
-  // app.game.id = data.game.id
+  app.game = data.game
+  app.game.id = data.game.id
   // $('#password-success').hide()
 }
 
@@ -54,6 +54,25 @@ const onCreateGameError = function (response) {
   console.log('err')
 }
 
+const onUpdateGameSuccess = function (data) {
+  console.log('You updated a new game')
+  console.log(data)
+}
+
+const onUpdateGameFailure = function (response) {
+  console.log(response)
+  console.log('err')
+}
+
+const onGetHistorySuccess = function (data) {
+  console.log('You updated a new game')
+  console.log(data)
+}
+
+const onGetHistoryFailure = function (response) {
+  console.log(response)
+  console.log('err')
+}
 module.exports = {
   onSignUpSuccess,
   onError,
@@ -64,5 +83,9 @@ module.exports = {
   onSignOutSuccess,
   onSignOutError,
   onCreateGameSuccess,
-  onCreateGameError
+  onCreateGameError,
+  onUpdateGameSuccess,
+  onUpdateGameFailure,
+  onGetHistorySuccess,
+  onGetHistoryFailure
 }

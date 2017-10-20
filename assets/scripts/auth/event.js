@@ -45,18 +45,20 @@ const onCreateGame = function (event) {
     .catch(ui.onCreateGameFailure)
 }
 
-// const onUpdateGame = function (index, val, over) {
-//   api.updateGame(index, val, over)
-//     .then(ui.onUpdateGameSuccess)
-//     .catch(ui.onUpdateGameFailure)
-// }
-//
-// const onGetHistory = function (event) {
-//   event.preventDefault()
-//   api.getHistory()
-//     .then(ui.getHistorySuccess)
-//     .catch(ui.getHistoryFailure)
-// }
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateGame(data)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
+
+const onGetHistory = function (event) {
+  event.preventDefault()
+  api.getHistory()
+    .then(ui.getHistorySuccess)
+    .catch(ui.getHistoryFailure)
+}
 
 // const addHandlers = () => {
 //   $('#sign-up').on('submit', onSignUp)
@@ -70,7 +72,7 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword,
-  onCreateGame
-  // onUpdateGame,
-  // onGetHistory
+  onCreateGame,
+  onUpdateGame,
+  onGetHistory
 }

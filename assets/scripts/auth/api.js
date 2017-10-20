@@ -1,6 +1,6 @@
 'use strict'
 
-const app = require('../app.js')
+const app = require('../store.js')
 
 // authApi.signUp(authUi.success, authUi.failure, data)
 
@@ -92,22 +92,22 @@ const updateGame = (index, val, over) => {
   })
 }
 
-// const getHistory = (data) => {
-//   return $.ajax({
-//     url: app.host + '/games?over=true',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     }
-//   })
-// }
+const getHistory = (data) => {
+  return $.ajax({
+    url: app.host + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  createGame
-  // updateGame,
-  // getHistory
+  createGame,
+  updateGame,
+  getHistory
 }

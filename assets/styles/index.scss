@@ -45,6 +45,13 @@ body {
   text-align: center;
 }
 
+#create-game {
+  background-color: transparent;
+  color: #86ff12;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .header {
   color: #F47209;
   font-size: 10px;
@@ -57,8 +64,8 @@ body {
 
 .youhave {
   color: #86ff12;
-  font-size: 20px;
-  text-align: center;
+  font-family: fantasy;
+  font-size: 40px;
 }
 // .container {
 //   float: left;
@@ -70,32 +77,34 @@ body {
 
 #countdowntimer {
   color: #86ff12;
-  font-size: 80px;
+  font-family: fantasy;
+  font-size: 50px;
   text-align: center;
 }
 
 #message {
   background-color: transparent;
   color: #86ff12;
+  font-family: fantasy;
   font-size: 40px;
   text-align: center;
 }
 
 #signOut {
-background-color: transparent;
-color: #F47209;
-font-size: 20px;
-font-weight: 300;
-float: right;
-margin-top: 80px;
+  background-color: transparent;
+  color: #F47209;
+  font-size: 20px;
+  font-weight: 300;
+  float: right;
+  margin-top: 80px;
 }
 
 h4 {
-background-color: transparent;
-color: #F47209;
-font-size: 20px;
-text-align: center;
-font-weight: 300;
+  background-color: transparent;
+  color: #86ff12;
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
 }
 
 table {
@@ -140,7 +149,7 @@ h2 {
 
 h3 {
   color: #86ff12;
-  font-size: 80px;
+  font-size: 50px;
   text-align: center;
 }
 

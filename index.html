@@ -70,8 +70,7 @@
 
 <!-- ///container to hide/// -->
 <div class="game">
-
-        <h4></h4>
+  <br></br>
 
         <div class="youhave">
         <h3> You only have <span id="countdowntimer">10 </span> seconds to think</h3>
@@ -79,6 +78,7 @@
 
     <div id= "message">Ready to explode?</div>
 
+  <h4>GAME ON</h4>
 <br> </br>
 
 <table class="container-fluid border">
@@ -113,16 +113,35 @@
 
     <!-- <button type="button" id="createGame">New Game</button> -->
 
-
     <!-- <div class="button">
 <input type="button" value="New Game" onClick="window.location.reload()">
      </div> -->
 
      <form id="create-game">
-            <input class="btn btn-default" type="submit" name="submit" value="Start New Game">
+            <input type="submit" name="submit" value="New Game">
+                  <!-- class="btn btn-default" -->
       </form>
 
-  <div class="rules">
+      <form id="clear">
+             <input type="submit" name="submit" value="End Game">
+                   <!-- class="btn btn-default" -->
+       </form>
+
+       <!-- <button type="button" id="reset" class="hidden">New Game</button>
+               <div id="xWins" class="hidden">
+                 <h2> Player X Wins!</h2>
+               </div>
+               <div id="oWins" class="hidden">
+                 <h2> Player O Wins!</h2>
+               </div>
+               <div id="resultDraw" class="hidden">
+                 <h2>Draw!</h2>
+               </div>
+             </main>
+             <button id = 'get-games'>Get Games</button>
+             <p class= "successMessage" id="gameStats">
+             </p>
+  <div class="rules"> -->
 <h2> Rules </h2>
 
         <p> First each player picks a weapon. (X or O)</p>
