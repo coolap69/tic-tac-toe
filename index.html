@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tick!!! Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+
+    </head>
+
+<body>
+  <div class="container">
+  <form method="POST" id="signUp">
+          <fieldset>
+            <!-- <legend>Sign up!</legend> -->
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+        </div>
+
+          <div class="container">
+            <form id="signIn">
+          <fieldset>
+            <!-- <legend>Sign in!</legend> -->
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="submit" name="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+
+        <div class="container">
+        <form id="changePassword">
+          <fieldset>
+            <!-- <legend>Change Password</legend> -->
+            <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+            <input type="password" name="passwords[new]" value="" placeholder="New Password">
+            <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
+        </div>
+
+
+        <!-- <form id="signOut">
+          <fieldset>
+        <input type="submit" name="submit" value="Sign out!">
+      </fieldset>
+    </form> -->
+
+    <form class="form-group">
+          <button type="submit" id="signOut">Sign out!</button>
+            </form>
+
+
+
+      <div class="header">
+
+        <h1>Tick! Tick! Tick! Tac Toe</h1>
+      </div>
+
+<!-- ///container to hide/// -->
+<div class="game">
+  <br></br>
+
+        <div class="youhave">
+        <h3> You only have <span id="countdowntimer">10 </span> seconds to think</h3>
+  </div>
+
+    <div id= "message">Ready to explode?</div>
+
+  <h4>GAME ON</h4>
+<br> </br>
+
+<table class="container-fluid border">
+
+<tr>
+  <td class = "Box" id = "box1">  </td>
+  <td class = "Box" id = "box2">  </td>
+  <td class = "Box" id = "box3">  </td>
+</tr>
+
+<tr>
+  <td class = "Box" id = "box4">  </td>
+  <td class = "Box" id = "box5">  </td>
+  <td class = "Box" id = "box6">  </td>
+</tr>
+
+<tr>
+  <td class = "Box" id = "box7">  </td>
+  <td class = "Box" id = "box8">  </td>
+  <td class = "Box" id = "box9">  </td>
+</tr>
+
+</table>
+
+
+<br> </br>
+
+
+<!-- <div class="button">
+<button type="submit" id="createGame">New Game</button>
+    </div> -->
+
+    <!-- <button type="button" id="createGame">New Game</button> -->
+
+    <!-- <div class="button">
+<input type="button" value="New Game" onClick="window.location.reload()">
+     </div> -->
+
+     <form id="create-game">
+            <input type="submit" name="submit" value="New Game">
+                  <!-- class="btn btn-default" -->
+      </form>
+
+      <form id="clear">
+             <input type="submit" name="submit" value="End Game">
+                   <!-- class="btn btn-default" -->
+       </form>
+
+       <!-- <button type="button" id="reset" class="hidden">New Game</button>
+               <div id="xWins" class="hidden">
+                 <h2> Player X Wins!</h2>
+               </div>
+               <div id="oWins" class="hidden">
+                 <h2> Player O Wins!</h2>
+               </div>
+               <div id="resultDraw" class="hidden">
+                 <h2>Draw!</h2>
+               </div>
+             </main>
+             <button id = 'get-games'>Get Games</button>
+             <p class= "successMessage" id="gameStats">
+             </p>
+  <div class="rules"> -->
+<h2> Rules </h2>
+
+        <p> First each player picks a weapon. (X or O)</p>
+        <p> The X player gets to go first and applies a weapon inside of a box. </p>
+        <p> After each move the clock will have a counr of 10 seconds. enought time to make a decision</p>
+        <p> To make it a little challenging the board will move</p>
+
+      <p>
+      In the future my tick tick tac toe game will allow 2 users to play
+      at any time from any device but once they decide to play. The cointdown begins.
+      Each user will have a 10 second decision to add a mark (X or O) or else the game will explode (automatic loss).</p>
+      <p>ARE YOU READY FOR THE CHALLENGE?</p>
+  </div>
+</div>
+    </body>
+</html>
